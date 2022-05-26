@@ -1,0 +1,130 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Partials 
+@import './partials/header.scss';
+@import './partials/footer.scss';
+
+// Pages 
+@import './pages/welcome.scss';
+@import './pages/services.scss';
+@import './pages/service.scss';
+@import './pages/contact.scss';
+
+// Settings
+body {
+    font-family: $font-family-sans-serif;
+    font-size: 16px !important;
+    color: $secondary !important;
+    font-weight: bold !important;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0 !important;
+}
+
+ul {
+    padding-left: unset;
+    list-style: none;
+    margin-bottom: unset !important;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: unset !important;
+    color: unset !important;
+    cursor: pointer !important;
+}
+
+main {
+    padding-top: 4.399375rem;
+}
+
+.containerCustom {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.icons {
+    width: 2rem;
+    height: auto;
+    margin-bottom: .5rem;
+}
+
+.menu-icons {
+    width: 1.5rem;
+    height: auto;
+    cursor: pointer;
+}
+
+.contact-us-btn {
+    display: block;
+    width: fit-content;
+    background: $secondary;
+    color: $white !important;
+    width: 100%;
+    text-align: center;
+    padding: .5rem;
+    font-size: 1.125rem;
+    border-radius: $borders;
+}
+
+.overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: rgba($secondary, $opacity);
+    display: none;
+    opacity: 0;
+    transition: .25s ease-in-out;
+}
+
+.filter-grey {
+    filter: invert(34%) sepia(6%) saturate(7%) hue-rotate(319deg) brightness(92%) contrast(85%);
+}
+
+.filter-white {
+    filter: invert(100%) sepia(3%) saturate(7453%) hue-rotate(9deg) brightness(118%) contrast(104%);
+}
+
+.contact-us-btn:hover {
+    color: $primary !important;
+    box-shadow: unset !important;
+    transition: .25s ease-in-out;
+}
+
+.menu-icons:hover {
+    filter: invert(90%) sepia(47%) saturate(838%) hue-rotate(322deg) brightness(105%) contrast(101%);
+    transition: .25s ease-in-out;
+}
+
+@include media-breakpoint-down(md) {
+    main {
+        padding-top: 3.399375rem;
+    }
+
+    .icons {
+        width: 1.5rem;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .contact-us-btn {
+        font-size: 1rem;
+    }
+}

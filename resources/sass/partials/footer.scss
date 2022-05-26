@@ -1,0 +1,36 @@
+footer {
+    background-image: linear-gradient(to bottom, rgba(255,0,0,0) 0%, $primary 25%);
+    padding: 2rem 0;
+}
+
+footer section {
+    display: flex;
+    justify-content: center;
+    gap: 15rem;
+    font-size: 1.125rem;
+}
+
+footer section div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer a:hover {
+    color: $white !important;
+    transition: .25s ease-in-out;
+}
+
+@include media-breakpoint-down(md) {
+    footer section {
+        gap: 3rem;
+        font-size: 1rem;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    footer section {
+        gap: 2rem;
+        font-size: .9rem;
+    }
+}

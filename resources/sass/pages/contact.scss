@@ -1,0 +1,130 @@
+/* INTRO */
+.contact-intro {
+    padding: 2rem 0;
+}
+
+.contact-intro article {
+    background-image: linear-gradient(to left, rgba(255,0,0,0) 0%, $white 25%);
+    width: 50%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    z-index: 7;
+}
+
+.contact-rectangle {
+    width: 287.04px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 4rem;
+    border: .5rem solid $primary;
+    border-radius: $borders;
+}
+
+.contact-intro h1 {
+    font-size: 5rem;
+    line-height: 5.5rem;
+    color: $accent;
+}
+
+.contact-intro h2 {
+    font-size: 1.125rem;
+    margin-bottom: 3rem !important;
+}
+
+.contact-intro h1, 
+.contact-intro h2 {
+    white-space: nowrap;
+    font-family: $font-family-alfa;
+}
+
+.contact-intro,
+.contact-rectangle {
+    z-index: 8;
+    position: relative;
+}
+
+.contact-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-wrapper-small {
+    display: flex;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.contact-details p,
+.residence p {
+    margin-bottom: unset !important;
+}
+
+.contact-details a {
+    display: block;
+}
+
+.contact-icons {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-details a:hover {
+    color: $primary !important;
+    transition: .25s ease-in-out;
+}
+
+/* MEDIA QUERIES */
+@include media-breakpoint-down(lg) {
+    .contact-intro article {
+        width: 75%;
+    }
+
+    .contact-wrapper {
+        align-items: unset;
+    }
+
+    .contact-wrapper-small {
+        flex-direction: column;
+        gap: 3rem;
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .contact-intro h1 {
+        font-size: 4rem;
+        line-height: 4.5rem;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .contact-intro article {
+        width: 100%;
+    }
+
+    .contact-intro h1 {
+        font-size: 2.3rem;
+        line-height: 2.5rem;
+    }
+
+    .contact-intro h2 {
+        font-size: .8rem;
+        margin-bottom: 2rem !important;
+    }
+
+    .contact-wrapper {
+        flex-direction: column;
+        justify-content: unset;
+        align-items: center;
+        gap: 3rem;
+    }
+}
