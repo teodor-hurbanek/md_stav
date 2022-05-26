@@ -22,5 +22,5 @@ Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->nam
 // routes
 Route::get('/', [PagesController::class, 'home']);
 Route::get('sluzby', [PagesController::class, 'services']);
-Route::get('service', [PagesController::class, 'service']);
+Route::get('s', [PagesController::class, 'service']);
 Route::get('kontakt', [PagesController::class, 'contact']);

@@ -51,7 +51,7 @@
             </nav>
         </header>
 
-        <div id="postHeader" class="post-header header-mobile" onclick="event.stopPropagation();">
+        <div id="postHeader" class="post-header" onclick="event.stopPropagation();">
             <div onclick="closePostHeader()">
                 <img class="menu-icons filter-grey" src="/img/svg/cross.svg" alt="Close icon">
             </div>

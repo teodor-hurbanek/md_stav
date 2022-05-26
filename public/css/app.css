@@ -11485,6 +11485,8 @@ footer a:hover {
   display: block;
   border-radius: 1rem;
   overflow: hidden;
+  max-height: 18rem;
+  min-height: 18rem;
 }
 
 .welcome-card-btn {
@@ -12103,6 +12105,13 @@ footer a:hover {
     font-size: 4rem;
     line-height: 4.5rem;
   }
+
+  .contact-wrapper {
+    flex-direction: column;
+    justify-content: unset;
+    align-items: center;
+    gap: 3rem;
+  }
 }
 @media (max-width: 575.98px) {
   .contact-intro article {
@@ -12117,13 +12126,6 @@ footer a:hover {
   .contact-intro h2, .contact-intro .h2 {
     font-size: 0.8rem;
     margin-bottom: 2rem !important;
-  }
-
-  .contact-wrapper {
-    flex-direction: column;
-    justify-content: unset;
-    align-items: center;
-    gap: 3rem;
   }
 }
 body {

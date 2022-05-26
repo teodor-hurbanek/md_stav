@@ -26,41 +26,16 @@
     <section class="welcome-services">
         <div class="containerCustom">
             <div class="welcome-row">
-                <a href="#" class="welcome-card shadow">
-                    <div class="welcome-card-img"><img src="/img/zemne_vykopove_prace/97ded3ee-f412-47a9-9954-3998bf256cf9.JPG" alt="Service image"></div>
-                    <div class="welcome-card-btn">
-                        <p>Realizacie bazenov na kluc</p>
-                        <div class="welcome-card-icon"><img src="/img/svg/angle-right.svg" class="filter-white" alt="Right angle icon"></div>
-                    </div>
-                    <div class="yellow-overlay"></div>
-                </a>
-
-                <a href="#" class="welcome-card shadow">
-                    <div class="welcome-card-img"><img src="/img/zemne_vykopove_prace/97ded3ee-f412-47a9-9954-3998bf256cf9.JPG" alt="Service image"></div>
-                    <div class="welcome-card-btn">
-                        <p>Realizacie bazenov na kluc</p>
-                        <div class="welcome-card-icon"><img src="/img/svg/angle-right.svg" class="filter-white" alt="Right angle icon"></div>
-                    </div>
-                    <div class="yellow-overlay"></div>
-                </a>
-
-                <a href="#" class="welcome-card shadow">
-                    <div class="welcome-card-img"><img src="/img/zemne_vykopove_prace/97ded3ee-f412-47a9-9954-3998bf256cf9.JPG" alt="Service image"></div>
-                    <div class="welcome-card-btn">
-                        <p>Realizacie bazenov na kluc</p>
-                        <div class="welcome-card-icon"><img src="/img/svg/angle-right.svg" class="filter-white" alt="Right angle icon"></div>
-                    </div>
-                    <div class="yellow-overlay"></div>
-                </a>
-
-                <a href="#" class="welcome-card shadow">
-                    <div class="welcome-card-img"><img src="/img/zemne_vykopove_prace/97ded3ee-f412-47a9-9954-3998bf256cf9.JPG" alt="Service image"></div>
-                    <div class="welcome-card-btn">
-                        <p>Realizacie bazenov na kluc</p>
-                        <div class="welcome-card-icon"><img src="/img/svg/angle-right.svg" class="filter-white" alt="Right angle icon"></div>
-                    </div>
-                    <div class="yellow-overlay"></div>
-                </a>
+                @foreach ($services as $service)
+                    <a href="/sluzby/{{ $service->slug }}" class="welcome-card shadow">
+                        <div class="welcome-card-img"><img src="{{ $service->images[0]->filePath }}" alt="{{ $service->title }} image"></div>
+                        <div class="welcome-card-btn">
+                            <p>{{ $service->title }}</p>
+                            <div class="welcome-card-icon"><img src="/img/svg/angle-right.svg" class="filter-white" alt="Right angle icon"></div>
+                        </div>
+                        <div class="yellow-overlay"></div>
+                    </a>
+                @endforeach
             </div>
         </div>
     </section>

@@ -77,6 +77,8 @@
     display: block;
     border-radius: $borders;
     overflow: hidden;
+    max-height: 18rem;
+    min-height: 18rem;
 }
 
 .welcome-card-btn {

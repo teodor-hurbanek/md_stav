@@ -117,12 +117,12 @@ main {
 ::-moz-selection { /* Code for Firefox */
     color: $primary;
     background: $secondary;
-  }
+}
   
-  ::selection {
+::selection {
     color: $primary;
     background: $secondary;
-  }
+}
 
 @include media-breakpoint-down(md) {
     main {

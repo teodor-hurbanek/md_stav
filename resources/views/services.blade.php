@@ -26,57 +26,16 @@
 <section class="services">
     <div class="containerCustom">
         <div class="services-wrapper">
-            <a href="#" class="services-card shadow">
-                <div class="description">
-                    <h3>Stavby na kľúč</h3>
-                    <p>
-                        Stavebná firma <span>M&D STAV</span> Vám ponúka široké spektrum stavebných služieb na profesionálnej úrovni.
-                        Komplexné poradenstvo pri realizácií stavebných služieb, búracích prác a dopravy.
-                        Pretvárame Vaše predstavy do reality našou odpbornou prácou.
-                    </p>
-                </div>
-                <div class="services-card-img"><img src="/img/zemne_vykopove_prace/97ded3ee-f412-47a9-9954-3998bf256cf9.JPG" alt="Service image"></div>
-                <div class="yellow-overlay"></div>
-            </a>
-
-            <a href="#" class="services-card shadow">
-                <div class="description">
-                    <h3>Stavby na kľúč</h3>
-                    <p>
-                        Stavebná firma <span>M&D STAV</span> Vám ponúka široké spektrum stavebných služieb na profesionálnej úrovni.
-                        Komplexné poradenstvo pri realizácií stavebných služieb, búracích prác a dopravy.
-                        Pretvárame Vaše predstavy do reality našou odpbornou prácou.
-                    </p>
-                </div>
-                <div class="services-card-img"><img src="/img/zemne_vykopove_prace/97ded3ee-f412-47a9-9954-3998bf256cf9.JPG" alt="Service image"></div>
-                <div class="yellow-overlay"></div>
-            </a>
-
-            <a href="#" class="services-card shadow">
-                <div class="description">
-                    <h3>Stavby na kľúč</h3>
-                    <p>
-                        Stavebná firma <span>M&D STAV</span> Vám ponúka široké spektrum stavebných služieb na profesionálnej úrovni.
-                        Komplexné poradenstvo pri realizácií stavebných služieb, búracích prác a dopravy.
-                        Pretvárame Vaše predstavy do reality našou odpbornou prácou.
-                    </p>
-                </div>
-                <div class="services-card-img"><img src="/img/zemne_vykopove_prace/97ded3ee-f412-47a9-9954-3998bf256cf9.JPG" alt="Service image"></div>
-                <div class="yellow-overlay"></div>
-            </a>
-
-            <a href="#" class="services-card shadow">
-                <div class="description">
-                    <h3>Stavby na kľúč</h3>
-                    <p>
-                        Stavebná firma <span>M&D STAV</span> Vám ponúka široké spektrum stavebných služieb na profesionálnej úrovni.
-                        Komplexné poradenstvo pri realizácií stavebných služieb, búracích prác a dopravy.
-                        Pretvárame Vaše predstavy do reality našou odpbornou prácou.
-                    </p>
-                </div>
-                <div class="services-card-img"><img src="/img/zemne_vykopove_prace/97ded3ee-f412-47a9-9954-3998bf256cf9.JPG" alt="Service image"></div>
-                <div class="yellow-overlay"></div>
-            </a>
+            @foreach ($services as $service)    
+                <a href="/sluzby/{{ $service->slug }}" class="services-card shadow">
+                    <div class="description">
+                        <h3>{{ $service->title }}</h3>
+                        <p>{{ $service->description }}</p>
+                    </div>
+                    <div class="services-card-img"><img src="{{ $service->images[0]->filePath }}" alt="{{ $service->title }} image"></div>
+                    <div class="yellow-overlay"></div>
+                </a>
+            @endforeach
         </div>
     </div>
 </section>
