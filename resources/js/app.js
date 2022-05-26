@@ -38,28 +38,59 @@ window.showDropdown = function() {
 }
 
 /* AREA */
-const modal = document.getElementById('overlay')
+
+/**
+ * Open Main Overlay
+ */
+ const modal = document.getElementById('overlay')
+ window.openModal = () => {
+    document.body.style.overflow = 'hidden'
+    modal.style.display = 'block'
+    window.setTimeout(function() {
+        modal.style.opacity = 1;
+    }, 0);
+}
+
+window.closeModal = () => {
+    closePostHeader()
+    closeGallery()
+    document.body.style.overflow = 'auto'
+}
+
+/**
+ * Open and Close Post header
+ */
 const postHeader = document.getElementById('postHeader')
 window.openPostHeader = () => {
-    modal.style.display = 'block'
     postHeader.style.display = 'block'
     modal.appendChild(postHeader)
-    window.setTimeout(function(){
-        modal.style.opacity = 1;
-      },0);
+    openModal()
 }
 
 window.closePostHeader = () => {
     modal.style.opacity = 0;
-    window.setTimeout(function(){
+    window.setTimeout(function() {
         modal.style.display = 'none'
         postHeader.style.display = 'none'
         postHeader.remove()
-      },500);
+      }, 500);
 }
 
-window.onclick = function(event) {
-if (event.target == modal) {
-        closePostHeader()
-    }
+/**
+ * Open and Close Service gallery
+ */
+const gallery = document.getElementById('gallery')
+window.openGallery = () => {
+    modal.appendChild(gallery)
+    openModal()
+    gallery.style.display = 'flex'
+}
+
+window.closeGallery = () => {
+    modal.style.opacity = 0;
+    window.setTimeout(function() {
+        modal.style.display = 'none'
+        gallery.style.display = 'none'
+        gallery.remove()
+      }, 500);
 }

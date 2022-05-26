@@ -5435,17 +5435,37 @@ window.showDropdown = function () {
 };
 /* AREA */
 
+/**
+ * Open Main Overlay
+ */
+
 
 var modal = document.getElementById('overlay');
-var postHeader = document.getElementById('postHeader');
 
-window.openPostHeader = function () {
+window.openModal = function () {
+  document.body.style.overflow = 'hidden';
   modal.style.display = 'block';
-  postHeader.style.display = 'block';
-  modal.appendChild(postHeader);
   window.setTimeout(function () {
     modal.style.opacity = 1;
   }, 0);
+};
+
+window.closeModal = function () {
+  closePostHeader();
+  closeGallery();
+  document.body.style.overflow = 'auto';
+};
+/**
+ * Open and Close Post header
+ */
+
+
+var postHeader = document.getElementById('postHeader');
+
+window.openPostHeader = function () {
+  postHeader.style.display = 'block';
+  modal.appendChild(postHeader);
+  openModal();
 };
 
 window.closePostHeader = function () {
@@ -5456,11 +5476,26 @@ window.closePostHeader = function () {
     postHeader.remove();
   }, 500);
 };
+/**
+ * Open and Close Service gallery
+ */
 
-window.onclick = function (event) {
-  if (event.target == modal) {
-    closePostHeader();
-  }
+
+var gallery = document.getElementById('gallery');
+
+window.openGallery = function () {
+  modal.appendChild(gallery);
+  openModal();
+  gallery.style.display = 'flex';
+};
+
+window.closeGallery = function () {
+  modal.style.opacity = 0;
+  window.setTimeout(function () {
+    modal.style.display = 'none';
+    gallery.style.display = 'none';
+    gallery.remove();
+  }, 500);
 };
 
 /***/ }),

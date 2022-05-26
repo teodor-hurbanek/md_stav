@@ -86,6 +86,26 @@
     overflow: hidden;
 }
 
+/* GALLERY */ 
+.gallery-wrapper {
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    display: none;
+    padding: 5rem 1rem;
+}
+
+.one-image {
+    width: 50%;
+    overflow: hidden;
+    border-radius: $borders;
+}
+
+.arrow-icons {
+    height: auto;
+    width: 2rem;
+}
+
 .yellow-overlay {
     position: absolute;
     top: 0px;
@@ -112,6 +132,10 @@
     .service-row {
         grid-template-columns: auto auto;
     }
+    
+    .one-image {
+        width: 100%;
+    }
 }
 
 @include media-breakpoint-down(lg) {
@@ -132,6 +156,14 @@
 
     .service-row {
         grid-template-columns: auto;
+    }
+
+    .gallery-wrapper {
+        gap: 1rem;
+    }
+    
+    .arrow-icons {
+        width: 1.5rem;
     }
 }
 

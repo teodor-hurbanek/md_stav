@@ -90,6 +90,7 @@ main {
     z-index: 10;
     background: rgba($secondary, $opacity);
     display: none;
+    cursor: pointer;
     opacity: 0;
     transition: .25s ease-in-out;
 }
@@ -112,6 +113,16 @@ main {
     filter: invert(90%) sepia(47%) saturate(838%) hue-rotate(322deg) brightness(105%) contrast(101%);
     transition: .25s ease-in-out;
 }
+
+::-moz-selection { /* Code for Firefox */
+    color: $primary;
+    background: $secondary;
+  }
+  
+  ::selection {
+    color: $primary;
+    background: $secondary;
+  }
 
 @include media-breakpoint-down(md) {
     main {

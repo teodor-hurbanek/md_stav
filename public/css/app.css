@@ -11895,6 +11895,26 @@ footer a:hover {
   overflow: hidden;
 }
 
+/* GALLERY */
+.gallery-wrapper {
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  display: none;
+  padding: 5rem 1rem;
+}
+
+.one-image {
+  width: 50%;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.arrow-icons {
+  height: auto;
+  width: 2rem;
+}
+
 .yellow-overlay {
   position: absolute;
   top: 0px;
@@ -11921,6 +11941,10 @@ footer a:hover {
   .service-row {
     grid-template-columns: auto auto;
   }
+
+  .one-image {
+    width: 100%;
+  }
 }
 @media (max-width: 991.98px) {
   .service-intro article {
@@ -11939,6 +11963,14 @@ footer a:hover {
 
   .service-row {
     grid-template-columns: auto;
+  }
+
+  .gallery-wrapper {
+    gap: 1rem;
+  }
+
+  .arrow-icons {
+    width: 1.5rem;
   }
 }
 @media (max-width: 575.98px) {
@@ -12167,6 +12199,7 @@ main {
   z-index: 10;
   background: rgba(87, 87, 87, 0.7);
   display: none;
+  cursor: pointer;
   opacity: 0;
   transition: 0.25s ease-in-out;
 }
@@ -12188,6 +12221,17 @@ main {
 .menu-icons:hover {
   filter: invert(90%) sepia(47%) saturate(838%) hue-rotate(322deg) brightness(105%) contrast(101%);
   transition: 0.25s ease-in-out;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: #FFDF52;
+  background: #575757;
+}
+
+::selection {
+  color: #FFDF52;
+  background: #575757;
 }
 
 @media (max-width: 767.98px) {

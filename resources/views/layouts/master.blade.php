@@ -51,7 +51,7 @@
             </nav>
         </header>
 
-        <div id="postHeader" class="post-header header-mobile">
+        <div id="postHeader" class="post-header header-mobile" onclick="event.stopPropagation();">
             <div onclick="closePostHeader()">
                 <img class="menu-icons filter-grey" src="/img/svg/cross.svg" alt="Close icon">
             </div>
@@ -86,7 +86,7 @@
         @endif
 
         <!-- Hidden elements -->
-        <section id="overlay" class="overlay"></section>
+        <section id="overlay" class="overlay" onclick="closeModal()"></section>
     </div>
 </body>
 </html>
