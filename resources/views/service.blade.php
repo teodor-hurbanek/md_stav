@@ -8,7 +8,7 @@
             <div class="service-rectangle">
                 <h1>Z nápadu k<br>REALIZÁCII</h1>
                 <h2>Realizácia stavebných projektov,<br>dopravy a búracích prác</h2>
-                <a class="contact-us-btn shadow" href="{{ url('/kontakt') }}">Kontaktovať</a>
+                <a class="contact-us-btn shadow" href="{{ url('/contact') }}">Kontaktovať</a>
             </div>
         </div>
     </section>
@@ -26,35 +26,40 @@
     <section class="service-gallery">
         <div class="containerCustom">
             <div class="service-row">
-                <div onclick="openGallery()" class="service-col shadow">
-                    <img src="/img/zemne_vykopove_prace/97ded3ee-f412-47a9-9954-3998bf256cf9.JPG" alt="Service image">
-                    <div class="yellow-overlay"></div>
-                </div>
-                <div class="service-col shadow">
-                    <img src="/img/zemne_vykopove_prace/97ded3ee-f412-47a9-9954-3998bf256cf9.JPG" alt="Service image">
-                    <div class="yellow-overlay"></div>
-                </div>
-                <div class="service-col shadow">
-                    <img src="/img/zemne_vykopove_prace/97ded3ee-f412-47a9-9954-3998bf256cf9.JPG" alt="Service image">
-                    <div class="yellow-overlay"></div>
-                </div>
-                <div class="service-col shadow">
-                    <img src="/img/zemne_vykopove_prace/97ded3ee-f412-47a9-9954-3998bf256cf9.JPG" alt="Service image">
-                    <div class="yellow-overlay"></div>
-                </div>
+                @foreach ($service->images as $image)    
+                    <div data-id="{{ $image->id }}" data-value="{{ $image->filePath }}" onclick="openGallery(event, {{ $image->id }})" class="service-col shadow" style="background-image: url('{{ $image->filePath }}');">
+                        <div class="yellow-overlay"></div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
 
-    <section id="gallery" class="gallery-wrapper" onclick="event.stopPropagation();">
-        <div>
-            <img class="arrow-icons filter-white" src="/img/svg/angle-left.svg" alt="Left icon">
-        </div>
-        <div class="one-image">
-            <img src="/img/zemne_vykopove_prace/97ded3ee-f412-47a9-9954-3998bf256cf9.JPG" alt="Service image">
-        </div>
-        <div>
-            <img class="arrow-icons filter-white" src="/img/svg/angle-right.svg" alt="Right icon">
-        </div>
+    <section id="gallery" class="gallery">
+        <!--<h3 class="image-date">datum</h3>-->
+        <article onclick="closeModal()" class="gallery-wrapper">
+            <div onclick="prevImage(event)" class="gallery-btns">
+                <img class="arrow-icons filter-white" src="/img/svg/angle-left.svg" alt="Left icon">
+            </div>
+            <div onclick="event.stopPropagation();" class="one-image">
+                <img id="oneImage" src="" alt="Service image">
+            </div>
+            <div onclick="nextImage(event)" class="gallery-btns">
+                <img class="arrow-icons filter-white" src="/img/svg/angle-right.svg" alt="Right icon">
+            </div>
+        </article>
     </section>
 @endsection
+
+<script>
+    const serviceImages = {!! json_encode($service->images) !!}
+    console.log(serviceImages);
+
+    window.prevImage = event => {
+        event.stopPropagation()
+    }
+
+    window.nextImage = event => {
+        event.stopPropagation()
+    }
+</script>

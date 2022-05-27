@@ -5477,16 +5477,23 @@ window.closePostHeader = function () {
   }, 500);
 };
 /**
- * Open and Close Service gallery
+ * Open, Close and Gallery controls
  */
 
 
 var gallery = document.getElementById('gallery');
+var image = document.getElementById('oneImage');
+var id = null;
+var src = null;
 
-window.openGallery = function () {
+window.openGallery = function (event, id) {
   modal.appendChild(gallery);
   openModal();
-  gallery.style.display = 'flex';
+  gallery.style.display = 'block';
+  id = event.target.parentElement.attributes[0].value;
+  src = event.target.parentElement.attributes[1].value;
+  image.src = src;
+  console.log(id);
 };
 
 window.closeGallery = function () {
@@ -5496,6 +5503,14 @@ window.closeGallery = function () {
     gallery.style.display = 'none';
     gallery.remove();
   }, 500);
+};
+
+window.prevImage = function (event) {
+  event.stopPropagation();
+};
+
+window.nextImage = function (event) {
+  event.stopPropagation();
 };
 
 /***/ }),

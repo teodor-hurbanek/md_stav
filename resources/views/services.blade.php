@@ -8,7 +8,7 @@
         <div class="services-rectangle">
             <h1>Z nápadu k<br>REALIZÁCII</h1>
             <h2>Realizácia stavebných projektov,<br>dopravy a búracích prác</h2>
-            <a class="contact-us-btn shadow" href="{{ url('/kontakt') }}">Kontaktovať</a>
+            <a class="contact-us-btn shadow" href="{{ url('/contact') }}">Kontaktovať</a>
         </div>
     </div>
 </section>
@@ -27,12 +27,24 @@
     <div class="containerCustom">
         <div class="services-wrapper">
             @foreach ($services as $service)    
-                <a href="/sluzby/{{ $service->slug }}" class="services-card shadow">
+                <a href="{{ url('services/'.$service->slug) }}" class="services-card shadow">
                     <div class="description">
                         <h3>{{ $service->title }}</h3>
                         <p>{{ $service->description }}</p>
                     </div>
-                    <div class="services-card-img"><img src="{{ $service->images[0]->filePath }}" alt="{{ $service->title }} image"></div>
+                    @foreach ($service->images as $image)
+                            @if ($service->slug != 'stavebne-prace')
+                                @if ($loop->index == 1)
+                                    <div class="services-card-img"><img src="{{ $image->filePath }}" alt="{{ $service->title }} image"></div>
+                                    @break
+                                @endif
+                            @else
+                                @if ($loop->index == 2)
+                                    <div class="services-card-img"><img src="{{ $image->filePath }}" alt="{{ $service->title }} image"></div>
+                                    @break
+                                @endif
+                            @endif
+                        @endforeach
                     <div class="yellow-overlay"></div>
                 </a>
             @endforeach

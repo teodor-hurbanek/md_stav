@@ -11461,7 +11461,7 @@ footer a:hover {
 
 .welcome-description p {
   margin: 0 auto;
-  width: 80%;
+  width: 60%;
   font-size: 1.2rem;
 }
 
@@ -11485,8 +11485,8 @@ footer a:hover {
   display: block;
   border-radius: 1rem;
   overflow: hidden;
-  max-height: 18rem;
-  min-height: 18rem;
+  /*max-height: 18rem;
+  min-height: 18rem;*/
 }
 
 .welcome-card-btn {
@@ -11651,7 +11651,7 @@ footer a:hover {
 
 .services-description p {
   margin: 0 auto;
-  width: 80%;
+  width: 60%;
   font-size: 1.2rem;
 }
 
@@ -11864,7 +11864,7 @@ footer a:hover {
 
 .service-description p {
   margin: 0 auto;
-  width: 80%;
+  width: 60%;
   font-size: 1.2rem;
 }
 
@@ -11895,21 +11895,47 @@ footer a:hover {
   cursor: pointer;
   border-radius: 1rem;
   overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  height: 18rem;
 }
 
 /* GALLERY */
+.gallery {
+  display: none;
+  height: 100%;
+}
+
+.image-date {
+  color: #fff;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 2rem !important;
+}
+
 .gallery-wrapper {
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
-  display: none;
-  padding: 5rem 1rem;
+  height: 100%;
+}
+
+.gallery-image-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .one-image {
   width: 50%;
+  max-height: 90%;
   overflow: hidden;
   border-radius: 1rem;
+}
+
+.gallery-btns {
+  padding: 2rem;
 }
 
 .arrow-icons {
@@ -11967,8 +11993,8 @@ footer a:hover {
     grid-template-columns: auto;
   }
 
-  .gallery-wrapper {
-    gap: 1rem;
+  .gallery-btns {
+    padding: 2rem 1rem;
   }
 
   .arrow-icons {

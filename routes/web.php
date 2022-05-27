@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,6 +22,10 @@ Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->nam
 
 // routes
 Route::get('/', [PagesController::class, 'home']);
-Route::get('sluzby', [PagesController::class, 'services']);
-Route::get('s', [PagesController::class, 'service']);
-Route::get('kontakt', [PagesController::class, 'contact']);
+Route::get('services', [ServiceController::class, 'index']);
+Route::get('contact', [PagesController::class, 'contact']);
+
+// services
+Route::resource('services', ServiceController::class)->scoped([
+    'service' => 'slug',
+]);

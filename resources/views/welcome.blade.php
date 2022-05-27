@@ -8,7 +8,7 @@
             <div class="rectangle">
                 <h1>Z nápadu k<br>REALIZÁCII</h1>
                 <h2>Realizácia stavebných projektov,<br>dopravy a búracích prác</h2>
-                <a class="contact-us-btn shadow" href="{{ url('/kontakt') }}">Kontaktovať</a>
+                <a class="contact-us-btn shadow" href="{{ url('/contact') }}">Kontaktovať</a>
             </div>
         </div>
     </section>
@@ -27,8 +27,20 @@
         <div class="containerCustom">
             <div class="welcome-row">
                 @foreach ($services as $service)
-                    <a href="/sluzby/{{ $service->slug }}" class="welcome-card shadow">
-                        <div class="welcome-card-img"><img src="{{ $service->images[0]->filePath }}" alt="{{ $service->title }} image"></div>
+                    <a href="{{ url('services/'.$service->slug) }}" class="welcome-card shadow">
+                        @foreach ($service->images as $image)
+                            @if ($service->slug != 'stavebne-prace')
+                                @if ($loop->index == 1)
+                                    <div class="welcome-card-img"><img src="{{ $image->filePath }}" alt="{{ $service->title }} image"></div>
+                                    @break
+                                @endif
+                            @else
+                                @if ($loop->index == 2)
+                                    <div class="welcome-card-img"><img src="{{ $image->filePath }}" alt="{{ $service->title }} image"></div>
+                                    @break
+                                @endif
+                            @endif
+                        @endforeach
                         <div class="welcome-card-btn">
                             <p>{{ $service->title }}</p>
                             <div class="welcome-card-icon"><img src="/img/svg/angle-right.svg" class="filter-white" alt="Right angle icon"></div>

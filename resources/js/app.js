@@ -77,13 +77,20 @@ window.closePostHeader = () => {
 }
 
 /**
- * Open and Close Service gallery
+ * Open, Close and Gallery controls
  */
 const gallery = document.getElementById('gallery')
-window.openGallery = () => {
+const image = document.getElementById('oneImage')
+let id = null
+let src = null
+window.openGallery = (event, id) => {
     modal.appendChild(gallery)
     openModal()
-    gallery.style.display = 'flex'
+    gallery.style.display = 'block'
+    id = event.target.parentElement.attributes[0].value
+    src = event.target.parentElement.attributes[1].value
+    image.src = src
+    console.log(id);
 }
 
 window.closeGallery = () => {
@@ -93,4 +100,12 @@ window.closeGallery = () => {
         gallery.style.display = 'none'
         gallery.remove()
       }, 500);
+}
+
+window.prevImage = event => {
+    event.stopPropagation()
+}
+
+window.nextImage = event => {
+    event.stopPropagation()
 }

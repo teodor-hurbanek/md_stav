@@ -14,17 +14,7 @@ class PagesController extends Controller
         ]);
     }
 
-    public function services() {
-        return view('services', [
-            'services' => Service::all()
-        ]);
-    }
-
-    public function service() {
-        return view('service', [
-            'services' => Service::all()
-        ]);
-    }
+    public function services() {}
 
     public function contact() {
         return view('contact');

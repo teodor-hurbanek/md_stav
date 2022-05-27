@@ -7,7 +7,7 @@
             <div class="contact-rectangle">
                 <h1>Kontakt</h1>
                 <h2>Realizácia stavebných projektov,<br>dopravy a búracích prác</h2>
-                <a class="contact-us-btn shadow" href="{{ url('/sluzby') }}">Služby</a>
+                <a class="contact-us-btn shadow" href="{{ url('/services') }}">Služby</a>
             </div>
             
             <div class="contact-wrapper-small">
