@@ -77,8 +77,14 @@
     display: block;
     border-radius: $borders;
     overflow: hidden;
-    /*max-height: 18rem;
-    min-height: 18rem;*/
+    height: 18rem;
+}
+
+.welcome-card-img {
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    height: 100%;
 }
 
 .welcome-card-btn {

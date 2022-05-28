@@ -29,16 +29,8 @@
                 @foreach ($services as $service)
                     <a href="{{ url('services/'.$service->slug) }}" class="welcome-card shadow">
                         @foreach ($service->images as $image)
-                            @if ($service->slug != 'stavebne-prace')
-                                @if ($loop->index == 1)
-                                    <div class="welcome-card-img"><img src="{{ $image->filePath }}" alt="{{ $service->title }} image"></div>
-                                    @break
-                                @endif
-                            @else
-                                @if ($loop->index == 2)
-                                    <div class="welcome-card-img"><img src="{{ $image->filePath }}" alt="{{ $service->title }} image"></div>
-                                    @break
-                                @endif
+                            @if ($loop->index == 1)
+                                <div class="welcome-card-img" style="background-image: url('{{ $image->filePath }}');"></div>
                             @endif
                         @endforeach
                         <div class="welcome-card-btn">

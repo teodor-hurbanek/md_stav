@@ -87,6 +87,7 @@
     position: relative;
     border-radius: $borders;
     overflow: hidden;
+    height: 18rem;
 }
 
 .services-card .description {
@@ -107,6 +108,12 @@
     border-top-right-radius: $borders;
     border-bottom-right-radius: $borders;
     overflow: hidden;
+
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
 }
 
 .yellow-overlay {
@@ -163,6 +170,7 @@
 
     .services-card {
         flex-direction: column-reverse;
+        height: 28rem;
     }
 
     .services-card .description {

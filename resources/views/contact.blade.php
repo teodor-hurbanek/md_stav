@@ -14,7 +14,7 @@
                 <div class="contact-details">
                     <div>
                         <div class="contact-icons">
-                            <div><img class="menu-icons filter-grey" src="/img/svg/phone-call.svg" alt="Residence icon"></div>
+                            <div><img class="filter-grey" src="/img/svg/phone-call.svg" alt="Phone icon"></div>
                             <h3>Kontakt</h3>
                         </div>
                         <a href="tel:0948431191">0948 431 191</a>
@@ -23,7 +23,7 @@
                     </div>
                     <div>
                         <div class="contact-icons">
-                            <div><img class="menu-icons filter-grey" src="/img/svg/document.svg" alt="Residence icon"></div>
+                            <div><img class="filter-grey" src="/img/svg/document.svg" alt="Details icon"></div>
                             <h3>Fakturačné údaje</h3>
                         </div>
                         <p><span>IČO: </span>50800612</p>
@@ -33,7 +33,7 @@
     
                 <div class="residence">
                     <div class="contact-icons">
-                        <div><img class="menu-icons filter-grey" src="/img/svg/building.svg" alt="Residence icon"></div>
+                        <div><img class="filter-grey" src="/img/svg/building.svg" alt="Residence icon"></div>
                         <h3>Sídlo</h3>
                     </div>
                     <p>Na rybníčkoch 1731/13A</p>

@@ -5428,17 +5428,31 @@ var app = new Vue({
 });
 /* ADMIN */
 
+var navbarDropdown = document.getElementById('navbarDropdown');
 var dropdownMenu = document.getElementById('dropdownMenu');
 
 window.showDropdown = function () {
-  dropdownMenu.style.display = "block";
+  dropdownMenu.style.display = 'block';
 };
+
+window.closeDropdown = function () {
+  dropdownMenu.style.display = 'none';
+};
+
+document.addEventListener('click', function (event) {
+  if (event.target !== dropdownMenu) {
+    closeDropdown();
+  }
+
+  if (event.target === navbarDropdown) {
+    showDropdown();
+  }
+});
 /* AREA */
 
 /**
  * Open Main Overlay
  */
-
 
 var modal = document.getElementById('overlay');
 
@@ -5482,18 +5496,15 @@ window.closePostHeader = function () {
 
 
 var gallery = document.getElementById('gallery');
-var image = document.getElementById('oneImage');
+var images = document.querySelectorAll('.one-image');
 var id = null;
-var src = null;
 
-window.openGallery = function (event, id) {
+window.openGallery = function (key) {
   modal.appendChild(gallery);
   openModal();
   gallery.style.display = 'block';
-  id = event.target.parentElement.attributes[0].value;
-  src = event.target.parentElement.attributes[1].value;
-  image.src = src;
-  console.log(id);
+  id = key;
+  showImage(key);
 };
 
 window.closeGallery = function () {
@@ -5502,15 +5513,40 @@ window.closeGallery = function () {
     modal.style.display = 'none';
     gallery.style.display = 'none';
     gallery.remove();
+    closeImages();
   }, 500);
+};
+
+window.showImage = function (key) {
+  if (images.length <= key) {
+    images[0].style.display = 'block';
+    id = 0;
+  } else if (key < 0) {
+    images[images.length - 1].style.display = 'block';
+    id = images.length - 1;
+  } else {
+    images[key].style.display = 'block';
+  }
+};
+
+window.closeImages = function () {
+  images.forEach(function (item) {
+    item.style.display = 'none';
+  });
 };
 
 window.prevImage = function (event) {
   event.stopPropagation();
+  closeImages();
+  id -= 1;
+  showImage(id);
 };
 
 window.nextImage = function (event) {
   event.stopPropagation();
+  closeImages();
+  id += 1;
+  showImage(id);
 };
 
 /***/ }),

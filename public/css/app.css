@@ -11371,7 +11371,7 @@ header ul {
   }
 }
 footer {
-  background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0) 0%, #FFDF52 25%);
+  border-top: 0.08rem solid rgba(87, 87, 87, 0.2);
   padding: 2rem 0;
 }
 
@@ -11389,7 +11389,7 @@ footer section div {
 }
 
 footer a:hover {
-  color: #fff !important;
+  color: #FFDF52 !important;
   transition: 0.25s ease-in-out;
 }
 
@@ -11485,8 +11485,14 @@ footer a:hover {
   display: block;
   border-radius: 1rem;
   overflow: hidden;
-  /*max-height: 18rem;
-  min-height: 18rem;*/
+  height: 18rem;
+}
+
+.welcome-card-img {
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  height: 100%;
 }
 
 .welcome-card-btn {
@@ -11685,6 +11691,7 @@ footer a:hover {
   position: relative;
   border-radius: 1rem;
   overflow: hidden;
+  height: 18rem;
 }
 
 .services-card .description {
@@ -11705,6 +11712,11 @@ footer a:hover {
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
   overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
 }
 
 .yellow-overlay {
@@ -11759,6 +11771,7 @@ footer a:hover {
 
   .services-card {
     flex-direction: column-reverse;
+    height: 28rem;
   }
 
   .services-card .description {
@@ -11932,6 +11945,7 @@ footer a:hover {
   max-height: 90%;
   overflow: hidden;
   border-radius: 1rem;
+  display: none;
 }
 
 .gallery-btns {
@@ -12104,6 +12118,11 @@ footer a:hover {
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
+}
+
+.contact-icons img {
+  width: 1.5rem;
+  height: auto;
 }
 
 .contact-details a:hover {

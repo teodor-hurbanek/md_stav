@@ -33,18 +33,10 @@
                         <p>{{ $service->description }}</p>
                     </div>
                     @foreach ($service->images as $image)
-                            @if ($service->slug != 'stavebne-prace')
-                                @if ($loop->index == 1)
-                                    <div class="services-card-img"><img src="{{ $image->filePath }}" alt="{{ $service->title }} image"></div>
-                                    @break
-                                @endif
-                            @else
-                                @if ($loop->index == 2)
-                                    <div class="services-card-img"><img src="{{ $image->filePath }}" alt="{{ $service->title }} image"></div>
-                                    @break
-                                @endif
-                            @endif
-                        @endforeach
+                        @if ($loop->index == 1)
+                            <div class="services-card-img" style="background-image: url('{{ $image->filePath }}')"></div>
+                        @endif
+                    @endforeach
                     <div class="yellow-overlay"></div>
                 </a>
             @endforeach

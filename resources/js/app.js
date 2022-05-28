@@ -32,10 +32,24 @@ const app = new Vue({
 });
 
 /* ADMIN */
+const navbarDropdown = document.getElementById('navbarDropdown');
 const dropdownMenu = document.getElementById('dropdownMenu');
 window.showDropdown = function() {
-    dropdownMenu.style.display = "block";
+    dropdownMenu.style.display = 'block';
 }
+
+window.closeDropdown = () => {
+    dropdownMenu.style.display = 'none';
+}
+
+document.addEventListener('click', event => {
+    if (event.target !== dropdownMenu) {
+        closeDropdown()
+    } 
+    if (event.target === navbarDropdown) {
+        showDropdown()
+    }
+})
 
 /* AREA */
 
@@ -80,17 +94,14 @@ window.closePostHeader = () => {
  * Open, Close and Gallery controls
  */
 const gallery = document.getElementById('gallery')
-const image = document.getElementById('oneImage')
+const images = document.querySelectorAll('.one-image')
 let id = null
-let src = null
-window.openGallery = (event, id) => {
+window.openGallery = (key) => {
     modal.appendChild(gallery)
     openModal()
     gallery.style.display = 'block'
-    id = event.target.parentElement.attributes[0].value
-    src = event.target.parentElement.attributes[1].value
-    image.src = src
-    console.log(id);
+    id = key
+    showImage(key)
 }
 
 window.closeGallery = () => {
@@ -99,13 +110,38 @@ window.closeGallery = () => {
         modal.style.display = 'none'
         gallery.style.display = 'none'
         gallery.remove()
+        closeImages()
       }, 500);
+}
+
+window.showImage = key => {
+    if (images.length <= key) {
+        images[0].style.display = 'block'
+        id = 0
+    } else if (key < 0) {
+        images[images.length - 1].style.display = 'block'
+        id = images.length - 1
+    } else {
+        images[key].style.display = 'block'
+    }
+}
+
+window.closeImages = () => {
+    images.forEach(item => {
+        item.style.display = 'none'
+    });
 }
 
 window.prevImage = event => {
     event.stopPropagation()
+    closeImages()
+    id -= 1
+    showImage(id)
 }
 
 window.nextImage = event => {
     event.stopPropagation()
+    closeImages()
+    id += 1
+    showImage(id)
 }

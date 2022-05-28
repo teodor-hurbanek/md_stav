@@ -26,8 +26,8 @@
     <section class="service-gallery">
         <div class="containerCustom">
             <div class="service-row">
-                @foreach ($service->images as $image)    
-                    <div data-id="{{ $image->id }}" data-value="{{ $image->filePath }}" onclick="openGallery(event, {{ $image->id }})" class="service-col shadow" style="background-image: url('{{ $image->filePath }}');">
+                @foreach ($service->images as $key => $image)    
+                    <div onclick="openGallery({{ $key }})" class="service-col shadow" style="background-image: url('{{ $image->filePath }}');">
                         <div class="yellow-overlay"></div>
                     </div>
                 @endforeach
@@ -41,25 +41,14 @@
             <div onclick="prevImage(event)" class="gallery-btns">
                 <img class="arrow-icons filter-white" src="/img/svg/angle-left.svg" alt="Left icon">
             </div>
-            <div onclick="event.stopPropagation();" class="one-image">
-                <img id="oneImage" src="" alt="Service image">
-            </div>
+            @foreach ($service->images as $image)    
+                <div onclick="event.stopPropagation();" class="one-image">
+                    <img src="{{ $image->filePath }}" alt="Service image">
+                </div>
+            @endforeach
             <div onclick="nextImage(event)" class="gallery-btns">
                 <img class="arrow-icons filter-white" src="/img/svg/angle-right.svg" alt="Right icon">
             </div>
         </article>
     </section>
 @endsection
-
-<script>
-    const serviceImages = {!! json_encode($service->images) !!}
-    console.log(serviceImages);
-
-    window.prevImage = event => {
-        event.stopPropagation()
-    }
-
-    window.nextImage = event => {
-        event.stopPropagation()
-    }
-</script>

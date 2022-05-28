@@ -78,6 +78,11 @@
     margin-bottom: 1.5rem;
 }
 
+.contact-icons img {
+    width: 1.5rem;
+    height: auto;
+}
+
 .contact-details a:hover {
     color: $primary !important;
     transition: .25s ease-in-out;
