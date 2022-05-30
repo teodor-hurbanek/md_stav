@@ -11453,6 +11453,12 @@ footer a:hover {
   font-family: "Alfa Slab One", cursive;
 }
 
+.welcome-intro,
+.rectangle {
+  z-index: 8;
+  position: relative;
+}
+
 /* DESCRIPTION */
 .welcome-description {
   background-image: linear-gradient(to top, rgba(255, 0, 0, 0) 0%, #FFDF52 25%);
@@ -11469,6 +11475,22 @@ footer a:hover {
   color: #7E0F09;
 }
 
+.welcome-description {
+  z-index: 8;
+  position: relative;
+}
+
+@media (max-width: 767.98px) {
+  .welcome-description p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 575.98px) {
+  .welcome-description p {
+    margin: unset;
+    width: 100%;
+  }
+}
 /* SERVICES */
 .welcome-services {
   padding: 5rem 0;
@@ -11523,10 +11545,7 @@ footer a:hover {
   width: 1.2rem;
 }
 
-.welcome-intro,
-.welcome-description,
-.welcome-services,
-.rectangle {
+.welcome-services {
   z-index: 8;
   position: relative;
 }
@@ -11569,10 +11588,6 @@ footer a:hover {
     line-height: 4.5rem;
   }
 
-  .welcome-description p {
-    font-size: 1rem;
-  }
-
   .welcome-row {
     grid-template-columns: auto;
   }
@@ -11595,80 +11610,8 @@ footer a:hover {
     font-size: 0.8rem;
     margin-bottom: 2rem !important;
   }
-
-  .welcome-description p {
-    margin: unset;
-    width: 100%;
-  }
 }
-/* INTRO */
-.services-intro {
-  background-image: url("/img/background/background.JPG");
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  background-attachment: fixed;
-  padding: 2rem 0;
-}
-
-.services-intro article {
-  background-image: linear-gradient(to left, rgba(255, 0, 0, 0) 0%, #fff 25%);
-  width: 50%;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 100%;
-  z-index: 7;
-}
-
-.services-rectangle {
-  width: 287.04px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 4rem 4rem;
-  border: 0.5rem solid #FFDF52;
-  border-radius: 1rem;
-}
-
-.services-intro h1, .services-intro .h1 {
-  font-size: 5rem;
-  line-height: 5.5rem;
-  color: #7E0F09;
-}
-
-.services-intro h2, .services-intro .h2 {
-  font-size: 1.125rem;
-  margin-bottom: 3rem !important;
-}
-
-.services-intro h1, .services-intro .h1,
-.services-intro h2,
-.services-intro .h2 {
-  white-space: nowrap;
-  font-family: "Alfa Slab One", cursive;
-}
-
-/* DESCRIPTION */
-.services-description {
-  background-image: linear-gradient(to top, rgba(255, 0, 0, 0) 0%, #FFDF52 25%);
-  padding: 2rem 0;
-}
-
-.services-description p {
-  margin: 0 auto;
-  width: 60%;
-  font-size: 1.2rem;
-}
-
-.services-description span {
-  color: #7E0F09;
-}
-
-.services-intro,
-.services-description,
-.services,
-.services-rectangle {
+.services {
   z-index: 8;
   position: relative;
 }
@@ -11686,6 +11629,7 @@ footer a:hover {
 
 .services-card {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 1rem;
   position: relative;
@@ -11716,7 +11660,7 @@ footer a:hover {
   background-position: top;
   background-size: cover;
   height: 100%;
-  width: 100%;
+  min-width: 21rem;
 }
 
 .yellow-overlay {
@@ -11790,6 +11734,8 @@ footer a:hover {
     border-top-right-radius: 1rem;
     border-top-left-radius: 1rem;
     border-bottom-right-radius: unset;
+    min-width: unset;
+    width: 100%;
   }
 }
 @media (max-width: 575.98px) {
@@ -11821,77 +11767,6 @@ footer a:hover {
     margin: unset;
   }
 }
-/* INTRO */
-.service-intro {
-  background-image: url("/img/background/background.JPG");
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  background-attachment: fixed;
-  padding: 2rem 0;
-}
-
-.service-intro article {
-  background-image: linear-gradient(to left, rgba(255, 0, 0, 0) 0%, #fff 25%);
-  width: 50%;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 100%;
-  z-index: 7;
-}
-
-.service-rectangle {
-  width: 287.04px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 4rem 4rem;
-  border: 0.5rem solid #FFDF52;
-  border-radius: 1rem;
-}
-
-.service-intro h1, .service-intro .h1 {
-  font-size: 5rem;
-  line-height: 5.5rem;
-  color: #7E0F09;
-}
-
-.service-intro h2, .service-intro .h2 {
-  font-size: 1.125rem;
-  margin-bottom: 3rem !important;
-}
-
-.service-intro h1, .service-intro .h1,
-.service-intro h2,
-.service-intro .h2 {
-  white-space: nowrap;
-  font-family: "Alfa Slab One", cursive;
-}
-
-/* DESCRIPTION */
-.service-description {
-  background-image: linear-gradient(to top, rgba(255, 0, 0, 0) 0%, #FFDF52 25%);
-  padding: 2rem 0;
-}
-
-.service-description p {
-  margin: 0 auto;
-  width: 60%;
-  font-size: 1.2rem;
-}
-
-.service-description span {
-  color: #7E0F09;
-}
-
-.service-intro,
-.service-description,
-.service-rectangle {
-  z-index: 8;
-  position: relative;
-}
-
 /* SERVICE */
 .service-gallery {
   padding: 5rem 0;

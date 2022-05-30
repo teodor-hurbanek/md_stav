@@ -1,0 +1,33 @@
+/* DESCRIPTION */
+.welcome-description {
+    background-image: linear-gradient(to top, rgba(255,0,0,0) 0%, $primary 25%);
+    padding: 2rem 0;
+}
+
+.welcome-description p {
+    margin: 0 auto;
+    width: 60%;
+    font-size: 1.2rem;
+}
+
+.welcome-description span {
+    color: $accent;
+}
+
+.welcome-description {
+    z-index: 8;
+    position: relative;
+}
+
+@include media-breakpoint-down(md) {
+    .welcome-description p {
+        font-size: 1rem;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .welcome-description p {
+        margin: unset;
+        width: 100%;
+    }
+}

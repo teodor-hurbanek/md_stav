@@ -5428,6 +5428,10 @@ var app = new Vue({
 });
 /* ADMIN */
 
+/**
+ * Open and Close Dropdown menu
+ */
+
 var navbarDropdown = document.getElementById('navbarDropdown');
 var dropdownMenu = document.getElementById('dropdownMenu');
 
@@ -5439,20 +5443,23 @@ window.closeDropdown = function () {
   dropdownMenu.style.display = 'none';
 };
 
-document.addEventListener('click', function (event) {
-  if (event.target !== dropdownMenu) {
-    closeDropdown();
-  }
+if (navbarDropdown || dropdownMenu) {
+  document.addEventListener('click', function (event) {
+    if (event.target !== dropdownMenu) {
+      closeDropdown();
+    }
 
-  if (event.target === navbarDropdown) {
-    showDropdown();
-  }
-});
+    if (event.target === navbarDropdown) {
+      showDropdown();
+    }
+  });
+}
 /* AREA */
 
 /**
  * Open Main Overlay
  */
+
 
 var modal = document.getElementById('overlay');
 
@@ -5518,6 +5525,8 @@ window.closeGallery = function () {
 };
 
 window.showImage = function (key) {
+  closeImages();
+
   if (images.length <= key) {
     images[0].style.display = 'block';
     id = 0;
@@ -5535,19 +5544,48 @@ window.closeImages = function () {
   });
 };
 
-window.prevImage = function (event) {
-  event.stopPropagation();
+window.prevImage = function () {
   closeImages();
   id -= 1;
   showImage(id);
 };
 
-window.nextImage = function (event) {
-  event.stopPropagation();
+window.nextImage = function () {
   closeImages();
   id += 1;
   showImage(id);
 };
+
+if (gallery) {
+  document.onkeydown = function (e) {
+    e = e || window.event;
+
+    if (e.keyCode == 27) {
+      closeModal();
+    }
+
+    if (e.keyCode == 37) {
+      prevImage();
+    }
+
+    if (e.keyCode == 39) {
+      nextImage();
+    }
+  };
+}
+/**
+ * Intro text formatting
+ 
+const introTitle = document.getElementById('introTitle')
+if (introTitle) {
+    const introTitleText = introTitle.textContent
+    const firstPart = introTitleText.substring(0, introTitleText.indexOf(' '))
+    const secondPart = introTitleText.substring(introTitleText.indexOf(' ') + 1)
+    console.log(firstPart);
+    console.log(secondPart);
+    introTitle.innerHTML = firstPart + '<br>' + `<span style="text-transform: uppercase;">${secondPart}<span>`
+}
+*/
 
 /***/ }),
 

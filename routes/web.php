@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ImageController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,4 +29,9 @@ Route::get('contact', [PagesController::class, 'contact']);
 // services
 Route::resource('services', ServiceController::class)->scoped([
     'service' => 'slug',
+]);
+
+// images
+Route::resource('images', ImageController::class)->only([
+    'store', 'update', 'destroy'
 ]);

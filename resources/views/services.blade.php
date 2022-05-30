@@ -1,27 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
-<section class="services-intro">
-    <article></article>
 
-    <div class="containerCustom">
-        <div class="services-rectangle">
-            <h1>Z nápadu k<br>REALIZÁCII</h1>
-            <h2>Realizácia stavebných projektov,<br>dopravy a búracích prác</h2>
-            <a class="contact-us-btn shadow" href="{{ url('/contact') }}">Kontaktovať</a>
-        </div>
-    </div>
-</section>
+@include('partials/intro')
 
-<section class="services-description">
-    <div class="containerCustom">
-        <p>
-            Stavebná firma <span>M&D STAV</span> Vám ponúka široké spektrum stavebných služieb na profesionálnej úrovni.
-            Komplexné poradenstvo pri realizácií stavebných služieb, búracích prác a dopravy.
-            Pretvárame Vaše predstavy do reality našou odpbornou prácou.
-        </p> 
-    </div>
-</section>
+@include('partials/description')
 
 <section class="services">
     <div class="containerCustom">

@@ -32,6 +32,10 @@ const app = new Vue({
 });
 
 /* ADMIN */
+
+/**
+ * Open and Close Dropdown menu
+ */
 const navbarDropdown = document.getElementById('navbarDropdown');
 const dropdownMenu = document.getElementById('dropdownMenu');
 window.showDropdown = function() {
@@ -42,22 +46,24 @@ window.closeDropdown = () => {
     dropdownMenu.style.display = 'none';
 }
 
-document.addEventListener('click', event => {
-    if (event.target !== dropdownMenu) {
-        closeDropdown()
-    } 
-    if (event.target === navbarDropdown) {
-        showDropdown()
-    }
-})
+if (navbarDropdown || dropdownMenu) {
+    document.addEventListener('click', event => {
+        if (event.target !== dropdownMenu) {
+            closeDropdown()
+        } 
+        if (event.target === navbarDropdown) {
+            showDropdown()
+        }
+    })
+}
 
 /* AREA */
 
 /**
  * Open Main Overlay
  */
- const modal = document.getElementById('overlay')
- window.openModal = () => {
+const modal = document.getElementById('overlay')
+window.openModal = () => {
     document.body.style.overflow = 'hidden'
     modal.style.display = 'block'
     window.setTimeout(function() {
@@ -87,7 +93,7 @@ window.closePostHeader = () => {
         modal.style.display = 'none'
         postHeader.style.display = 'none'
         postHeader.remove()
-      }, 500);
+    }, 500);
 }
 
 /**
@@ -111,10 +117,11 @@ window.closeGallery = () => {
         gallery.style.display = 'none'
         gallery.remove()
         closeImages()
-      }, 500);
+    }, 500);
 }
 
 window.showImage = key => {
+    closeImages()
     if (images.length <= key) {
         images[0].style.display = 'block'
         id = 0
@@ -132,16 +139,45 @@ window.closeImages = () => {
     });
 }
 
-window.prevImage = event => {
-    event.stopPropagation()
+window.prevImage = () => {
     closeImages()
     id -= 1
     showImage(id)
 }
 
-window.nextImage = event => {
-    event.stopPropagation()
+window.nextImage = () => {
     closeImages()
     id += 1
     showImage(id)
 }
+
+if (gallery) {
+    document.onkeydown = e => {
+        e = e || window.event;
+        if (e.keyCode == 27) {
+            closeModal()
+        }
+    
+        if (e.keyCode == 37) {
+            prevImage()
+        }
+    
+        if (e.keyCode == 39) {
+            nextImage()
+        }
+    };
+}
+
+/**
+ * Intro text formatting
+ 
+const introTitle = document.getElementById('introTitle')
+if (introTitle) {
+    const introTitleText = introTitle.textContent
+    const firstPart = introTitleText.substring(0, introTitleText.indexOf(' '))
+    const secondPart = introTitleText.substring(introTitleText.indexOf(' ') + 1)
+    console.log(firstPart);
+    console.log(secondPart);
+    introTitle.innerHTML = firstPart + '<br>' + `<span style="text-transform: uppercase;">${secondPart}<span>`
+}
+*/

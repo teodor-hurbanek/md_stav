@@ -17,7 +17,6 @@
                             <div><img class="filter-grey" src="/img/svg/phone-call.svg" alt="Phone icon"></div>
                             <h3>Kontakt</h3>
                         </div>
-                        <a href="tel:0948431191">0948 431 191</a>
                         <a href="tel:0940116398">0940 116 398</a>
                         <a href="mailto:martin158159@gmail.com">martin158159@gmail.com</a>
                     </div>

@@ -1,66 +1,3 @@
-/* INTRO */
-.welcome-intro {
-    background-image: url('/img/background/background.JPG');
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
-    background-attachment: fixed;
-    padding: 2rem 0;
-}
-
-.welcome-intro article {
-    background-image: linear-gradient(to left, rgba(255,0,0,0) 0%, $white 25%);
-    width: 50%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    z-index: 7;
-}
-
-.rectangle {
-    width: 287.04px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 4rem 4rem;
-    border: .5rem solid $primary;
-    border-radius: $borders;
-}
-
-.welcome-intro h1 {
-    font-size: 5rem;
-    line-height: 5.5rem;
-    color: $accent;
-}
-
-.welcome-intro h2 {
-    font-size: 1.125rem;
-    margin-bottom: 3rem !important;
-}
-
-.welcome-intro h1, 
-.welcome-intro h2 {
-    white-space: nowrap;
-    font-family: $font-family-alfa;
-}
-
-/* DESCRIPTION */
-.welcome-description {
-    background-image: linear-gradient(to top, rgba(255,0,0,0) 0%, $primary 25%);
-    padding: 2rem 0;
-}
-
-.welcome-description p {
-    margin: 0 auto;
-    width: 60%;
-    font-size: 1.2rem;
-}
-
-.welcome-description span {
-    color: $accent;
-}
-
 /* SERVICES */
 .welcome-services {
     padding: 5rem 0;
@@ -115,10 +52,7 @@
     width: 1.2rem;
 }
 
-.welcome-intro,
-.welcome-description,
-.welcome-services,
-.rectangle {
+.welcome-services {
     z-index: 8;
     position: relative;
 }
@@ -144,8 +78,6 @@
     transition: .25s ease-in-out;
 }
 
-
-
 /* MEDIA QUERIES */
 @include media-breakpoint-down(xl) {
     .welcome-row {
@@ -163,10 +95,6 @@
     .welcome-intro h1 {
         font-size: 4rem;
         line-height: 4.5rem;
-    }
-
-    .welcome-description p {
-        font-size: 1rem;
     }
 
     .welcome-row {
@@ -191,10 +119,5 @@
     .welcome-intro h2 {
         font-size: .8rem;
         margin-bottom: 2rem !important;
-    }
-
-    .welcome-description p {
-        margin: unset;
-        width: 100%;
     }
 }

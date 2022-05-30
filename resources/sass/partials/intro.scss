@@ -1,0 +1,52 @@
+/* INTRO */
+.welcome-intro {
+    background-image: url('/img/background/background.JPG');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 2rem 0;
+}
+
+.welcome-intro article {
+    background-image: linear-gradient(to left, rgba(255,0,0,0) 0%, $white 25%);
+    width: 50%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    z-index: 7;
+}
+
+.rectangle {
+    width: 287.04px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 4rem;
+    border: .5rem solid $primary;
+    border-radius: $borders;
+}
+
+.welcome-intro h1 {
+    font-size: 5rem;
+    line-height: 5.5rem;
+    color: $accent;
+}
+
+.welcome-intro h2 {
+    font-size: 1.125rem;
+    margin-bottom: 3rem !important;
+}
+
+.welcome-intro h1, 
+.welcome-intro h2 {
+    white-space: nowrap;
+    font-family: $font-family-alfa;
+}
+
+.welcome-intro,
+.rectangle {
+    z-index: 8;
+    position: relative;
+}
