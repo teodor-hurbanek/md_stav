@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Image;
+use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
 
 class ImageController extends Controller
@@ -15,7 +16,25 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->all();
+        $file = $request->file('file');
+        $filepath = storage_path($request->filePath);
+        $extension = $file->getClientOriginalExtension();
+        $filename = str_replace(
+            ".$extension",
+            "-". rand(11111, 99999) .".$extension",
+            $file->getClientOriginalName()
+        );
+        
+        $file->move($filepath, $filename);
+        
+        Image::create([
+            'fileName' => $filename,
+            'filePath' => $request->filePath,
+            'service_id' => $request->service_id,
+            'file' => $file
+        ]);
+
+        return redirect('/admin');
     }
 
     /**

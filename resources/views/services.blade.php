@@ -17,7 +17,7 @@
                     </div>
                     @foreach ($service->images as $image)
                         @if ($loop->index == 1)
-                            <div class="services-card-img" style="background-image: url('{{ $image->filePath }}')"></div>
+                            <div class="services-card-img" style="background-image: url('{{ $image->filePath . $image->fileName }}')"></div>
                         @endif
                     @endforeach
                     <div class="yellow-overlay"></div>

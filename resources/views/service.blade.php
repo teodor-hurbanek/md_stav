@@ -10,7 +10,7 @@
         <div class="containerCustom">
             <div class="service-row">
                 @foreach ($service->images as $key => $image)    
-                    <div onclick="openGallery({{ $key }})" class="service-col shadow" style="background-image: url('{{ $image->filePath }}');">
+                    <div onclick="openGallery({{ $key }})" class="service-col shadow" style="background-image: url('{{ $image->filePath . $image->fileName }}');">
                         <div class="yellow-overlay"></div>
                     </div>
                 @endforeach
@@ -26,7 +26,7 @@
             </div>
             @foreach ($service->images as $image)    
                 <div onclick="event.stopPropagation();" class="one-image">
-                    <img src="{{ $image->filePath }}" alt="Service image">
+                    <img src="{{ $image->filePath . $image->fileName}}" alt="Service image">
                 </div>
             @endforeach
             <div onclick="nextImage(event);event.stopPropagation();" class="gallery-btns">

@@ -5495,6 +5495,7 @@ window.closePostHeader = function () {
     modal.style.display = 'none';
     postHeader.style.display = 'none';
     postHeader.remove();
+    document.body.style.overflow = 'auto';
   }, 500);
 };
 /**
