@@ -17,7 +17,7 @@ class ImageController extends Controller
     public function store(Request $request)
     {
         $file = $request->file('file');
-        $filepath = storage_path($request->filePath);
+        $filepath = storage_path('app/public' . $request->filePath);
         $extension = $file->getClientOriginalExtension();
         $filename = str_replace(
             ".$extension",
@@ -31,7 +31,6 @@ class ImageController extends Controller
             'fileName' => $filename,
             'filePath' => $request->filePath,
             'service_id' => $request->service_id,
-            'file' => $file
         ]);
 
         return redirect('/admin');

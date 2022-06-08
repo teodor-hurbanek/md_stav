@@ -9,10 +9,10 @@
         <div class="containerCustom">
             <div class="welcome-row">
                 @foreach ($services as $service)
-                    <a href="{{ url('services/'.$service->slug) }}" class="welcome-card shadow">
+                    <a href="{{ url('services/' . $service->slug) }}" class="welcome-card shadow">
                         @foreach ($service->images as $image)
                             @if ($loop->index == 0)
-                                <div class="welcome-card-img" style="background-image: url('{{ $image->filePath . $image->fileName }}');"></div>
+                                <div class="welcome-card-img" style="background-image: url('{{ '/storage' . $image->filePath . $image->fileName }}');"></div>
                             @endif
                         @endforeach
                         <div class="welcome-card-btn">
