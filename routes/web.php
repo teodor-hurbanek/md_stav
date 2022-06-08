@@ -18,7 +18,13 @@ use Illuminate\Support\Facades\Auth;
 */
 
 // auth
-Auth::routes();
+Auth::routes([
+    'register' => false,
+    'reset' => false,
+    'verify' => false,
+    'email' => false,
+    'password' => false,
+]);
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // routes

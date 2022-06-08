@@ -197,7 +197,7 @@
                             </div>
                         </div>
 
-                        <input type="hidden" name="filePath" value="/img/prenajom_privesnych_vozikov/">
+                        <input type="hidden" name="filePath" value="/img/prenajom_vozikov/">
                         <input type="hidden" name="service_id" value="8">
                     </form>
                 </div>

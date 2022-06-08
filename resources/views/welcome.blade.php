@@ -11,7 +11,7 @@
                 @foreach ($services as $service)
                     <a href="{{ url('services/'.$service->slug) }}" class="welcome-card shadow">
                         @foreach ($service->images as $image)
-                            @if ($loop->index == 1)
+                            @if ($loop->index == 0)
                                 <div class="welcome-card-img" style="background-image: url('{{ $image->filePath . $image->fileName }}');"></div>
                             @endif
                         @endforeach
